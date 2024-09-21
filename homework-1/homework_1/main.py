@@ -116,7 +116,7 @@ async def handle_mean(scope: Scope, receive: Receive, send: Send) -> None:
     await send_response(send, 200, response_body)
 
 
-async def send_response(send: Send, status_code: int, body: bytes, content_type: str ='application/json') -> None:
+async def send_response(send: Send, status_code: int, body: bytes, content_type: str = 'application/json') -> None:
     headers = [
         [b'content-type', content_type.encode()]
     ]
