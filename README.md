@@ -5,8 +5,7 @@
 ### 1. Клонирование репозитория
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/hse-python-org-hw/hw-1.git
 ```
 
 ### 2. Установка зависимостей
