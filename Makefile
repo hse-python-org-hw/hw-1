@@ -1,10 +1,10 @@
 .PHONY: run test run_and_test
 
 run:
-	uvicorn main:app
+	uvicorn homework-1.homework_1.main:app
 
 test:
-	pytest tests/
+	pytest homework-1/tests
 
 run_and_test:
 	@echo "Запускаем приложение"
