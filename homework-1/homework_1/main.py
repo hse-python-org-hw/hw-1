@@ -117,6 +117,17 @@ async def handle_mean(scope: Scope, receive: Receive, send: Send) -> None:
 
 
 async def send_response(send: Send, status_code: int, body: bytes, content_type: str = 'application/json') -> None:
+    match status_code:
+        case 400:
+            result_body = json.dumps({"error": "Bad request"}).encode()
+        case 404:
+            result_body = json.dumps({"error": "Not found"}).encode()
+        case 422:
+            result_body = json.dumps({"error": "Unprocessable Entity"}).encode()
+        case 200:
+            result_body = body
+        case _:
+            result_body = b''
     headers = [
         [b'content-type', content_type.encode()]
     ]
@@ -127,5 +138,5 @@ async def send_response(send: Send, status_code: int, body: bytes, content_type:
     })
     await send({
         'type': 'http.response.body',
-        'body': body,
+        'body': result_body,
     })
