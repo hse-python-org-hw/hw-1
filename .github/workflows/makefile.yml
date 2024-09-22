@@ -24,12 +24,12 @@ jobs:
         curl -sSL https://install.python-poetry.org | python -
         echo "${HOME}/.local/bin" >> $GITHUB_PATH
 
-    - name: Install dependencies with Poetry
-      working-directory: homework-1
+    - name: Install dependencies and activate virtual environment
+      shell: bash
       run: |
+        cd homework-1
         poetry install
-
-    - name: Run tests
-      working-directory: .
-      run: |
+        source $(poetry env info --path)/bin/activate
+        
+        cd ..
         make run_and_test
