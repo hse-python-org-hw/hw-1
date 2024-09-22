@@ -32,4 +32,4 @@ jobs:
     - name: Run tests
       working-directory: .
       run: |
-        poetry run make run_and_test
+        make run_and_test
