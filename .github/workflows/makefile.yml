@@ -40,5 +40,5 @@ jobs:
 
       - name: Run tests
         run: |
-          source .venv/bin/activate
+          source $(poetry env info --path)/bin/activate
           make run_and_test
