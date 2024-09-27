@@ -30,3 +30,6 @@ poetry shell
 ```bash
 make run_and_test
 ```
+
+## GitHub Actions
+На проекте настроено автоматическое тестирование с помощью GitHub Actions. Workflow файл лежит в `.github/workflows`
